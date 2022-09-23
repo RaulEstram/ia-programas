@@ -2,8 +2,6 @@
 
 Codigo por Estrada Zermeño Raúl de Jesús
 
-Usaremos un algoritmo llamado minimax que utiliza funciones recursivas.
-
  */
 package main;
 
@@ -20,6 +18,8 @@ public class main {
         boolean continuar = true;
         Scanner input = new Scanner(System.in);
         boolean playerFirst;
+        System.out.println("Con que numero quieres jugar? (1/2)");
+        int simbolo = input.nextInt();
         do {
             System.out.println("Contador: \nVictorias jugador: " + victoriasPlayer + "\nVictorias PC: " + victoriasPC + "\nEmpates: " + empates);
             System.out.println("Quien va Primero? \n1) Jugador\n2) Maquina\n3) Salir del juego");
@@ -42,7 +42,7 @@ public class main {
                 }
             }
 
-            Gato gato = new Gato(matriz, playerFirst);
+            Gato gato = new Gato(matriz, playerFirst, simbolo);
             int ganador = gato.theWinner;
             if (ganador == 0) {
                 empates += 1;
